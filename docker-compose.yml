@@ -1,0 +1,30 @@
+# TODO: Add app dockerfile and service 
+version: '3'
+services:
+    pg-database:
+        image: "postgres" 
+        env_file:
+            - database.env
+        ports:
+            - "15432:5432"
+        volumes:
+            - pg-database-data:/var/lib/postgresql/data/ 
+        networks:
+            - pg-database-network
+
+    pg-admin:
+        image: "dpage/pgadmin4"
+        env_file:
+            - database.env
+        ports:
+            - "16543:80"
+        depends_on: 
+            - pg-database
+        networks: 
+            - pg-database-network
+
+networks: 
+    pg-database-network:
+        driver: bridge
+volumes:
+    pg-database-data: 
