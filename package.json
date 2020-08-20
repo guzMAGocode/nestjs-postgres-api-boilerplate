@@ -32,7 +32,7 @@
     "@types/config": "^0.0.36",
     "@types/html-to-text": "^5.1.0",
     "@types/passport": "^1.0.3",
-    "bcrypt": "^4.0.1",
+    "bcrypt": "^5.0.0",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.12.2",
     "dotenv": "^8.2.0",
